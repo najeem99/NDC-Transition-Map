@@ -18,6 +18,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:regular,medium,bold&amp;subset=latin,latin-ext"
       rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="styles.css">
+
     <style>
       #hidden {
         font: 500 18px Poppins;
@@ -523,224 +525,18 @@
         });
       };
       let regKeys = [
+
         {
           "type": "state",
-          "screenId": "016",
-          "STEP_FUNC": "NDC_FDK_SWITCH",
-          "STEP_PARAM": "501070095185PC1900800OS1"
-        },
-        {
-          "type": "state",
-          "screenId": "BP3",
+          "screenId": "SAM",
           "STEP_FUNC": "DC_INFORMATION_ENTRY",
-          "STEP_PARAM": "B03141137BP5BP3BP1137123"
+          "STEP_PARAM": "SCN141137BP5SAMBP1137123"
         },
         {
           "type": "screen",
-          "screenId": "B03",
+          "screenId": "SCN",
           "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEPLEASE ENTER ACCOUNT NUMBER"
         },
-        {
-          "type": "state",
-          "screenId": "BP4",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "B04141137BP5137255255000"
-        },
-        {
-          "type": "screen",
-          "screenId": "B04",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEPLEASE WAIT"
-        },
-        {
-          "type": "state",
-          "screenId": "BP5",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "B05141137BP6CIN255255000"
-        },
-        {
-          "type": "screen",
-          "screenId": "B05",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEBALANCE"
-        },
-        {
-          "type": "state",
-          "screenId": "BP6",
-          "STEP_FUNC": "DC_AMOUNT_ENTRY",
-          "STEP_PARAM": "B06141137BP7255255255B07"
-        },
-        {
-          "type": "screen",
-          "screenId": "B06",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEENTER AMOUNT"
-        },
-        {
-          "type": "screen",
-          "screenId": "B07",
-          "CONTENTS": "********",
-          "WEB_USE_HTML_DIALOG": "0"
-        },
-        {
-          "type": "state",
-          "screenId": "BP7",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "B08141137BA1BA255255000"
-        },
-        {
-          "type": "screen",
-          "screenId": "B08",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEPLEASE WAIT"
-        },
-        {
-          "type": "state",
-          "screenId": "BA1",
-          "STEP_FUNC": "DC_CLOSE_TRAN",
-          "STEP_PARAM": "B09000B09B09000000000000"
-        },
-        {
-          "type": "state",
-          "screenId": "BA2",
-          "STEP_FUNC": "DC_CLOSE_TRAN",
-          "STEP_PARAM": "B10000B10B10000000000000"
-        },
-        {
-          "type": "screen",
-          "screenId": "B09",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAESUCCESSFUL"
-        },
-        {
-          "type": "screen",
-          "screenId": "B08",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEFAILED"
-        },
-        {
-          "type": "state",
-          "screenId": "PC1",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "P01141137BP5BA2255255000"
-        },
-        {
-          "type": "screen",
-          "screenId": "P01",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEAVAILABLE CREDIT CARDS"
-        },
-        {
-          "type": "state",
-          "screenId": "D01",
-          "STEP_FUNC": "NDC_FDK_SELECT8",
-          "STEP_PARAM": "D01141000D03D02012255000"
-        },
-        {
-          "type": "screen",
-          "screenId": "D01",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0e190\\\\0f@=B01\\\\CARDLESS TRANSACTIONS"
-        },
-        {
-          "type": "state",
-          "screenId": "D02",
-          "STEP_FUNC": "NDC_EXT",
-          "STEP_PARAM": "100300940770881700400200"
-        },
-        {
-          "type": "state",
-          "screenId": "D03",
-          "STEP_FUNC": "NDC_FDK_SWITCH",
-          "STEP_PARAM": "014000255255255255255255",
-          "IDLE_B": ",,,,D01"
-        },
-        {
-          "type": "screen",
-          "screenId": "OS1",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEOTHER SERVICES"
-        },
-        {
-          "type": "state",
-          "screenId": "OS1",
-          "STEP_FUNC": "NDC_FDK_SELECT8",
-          "STEP_PARAM": "OS1141137OS3255255255"
-        },
-        {
-          "type": "state",
-          "screenId": "OS3",
-          "STEP_FUNC": "NDC_FDK_SWITCH",
-          "STEP_PARAM": "BP1EM1MS1ES1255255255255"
-        },
-        {
-          "type": "state",
-          "screenId": "CM1",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "CM1141137014255255255"
-        },
-        {
-          "type": "screen",
-          "screenId": "CM1",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAECOMMON SCREEN WITH 4 FDK"
-        },
-        {
-          "type": "state",
-          "screenId": "EM1",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "EM1141137OS2255255255"
-        },
-        {
-          "type": "screen",
-          "screenId": "EM1",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEEMAIL UPDATE"
-        },
-        {
-          "type": "state",
-          "screenId": "OS2",
-          "STEP_FUNC": "DC_CLOSE_TRAN",
-          "STEP_PARAM": "OS2000OS2000000000000"
-        },
-        {
-          "type": "screen",
-          "screenId": "OS2",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAE UPDATE TRANSACTION SUCCESSFUL"
-        },
-        {
-          "type": "state",
-          "screenId": "MS1",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "113141137255255255255"
-        },
-        {
-          "type": "screen",
-          "screenId": "MS1",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEMINI STATEMENT"
-        },
-        {
-          "type": "state",
-          "screenId": "ES1",
-          "STEP_FUNC": "DC_FDK_SELECT4",
-          "STEP_PARAM": "ES1141137ES2ES3255255"
-        },
-        {
-          "type": "screen",
-          "screenId": "ES1",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAEEMAIL AN RECEIPT"
-        },
-        {
-          "type": "state",
-          "screenId": "ES2",
-          "STEP_FUNC": "DC_CLOSE_TRAN",
-          "STEP_PARAM": "ES2000ES2000000000000"
-        },
-        {
-          "type": "screen",
-          "screenId": "ES2",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAE EMAIL SENT SUCCESS RESPONSE"
-        },
-        {
-          "type": "state",
-          "screenId": "ES3",
-          "STEP_FUNC": "DC_CLOSE_TRAN",
-          "STEP_PARAM": "ES2000ES3000000000000"
-        },
-        {
-          "type": "screen",
-          "screenId": "ES3",
-          "CONTENTS": "\\\\1b(1\\\\0c\\\\0fAE SMS SENT SUCCESS RESPONSE"
-        }
       ];
       const familyData = [
         {
@@ -873,6 +669,12 @@
         // you may want to use an asset loading library for this
         // to keep this sample simple, it does not
         setTimeout(() => {
+          const statesRaw = localStorage.getItem('states');
+          getLastEdited();
+          if (statesRaw) {
+            regKeys = JSON.parse(statesRaw);
+          }
+
           regKeys = regKeys.map(node => ({
             ...node,
             name: (node.type || '') + '_' + (node.screenId || '')  // fallback if any field missing
@@ -886,6 +688,19 @@
           initDiagram('myDiagramDiv');
         }, 300);
       });
+
+      function getLastEdited() {
+        const lastEditedRaw = localStorage.getItem('lastEdited');
+        const lastEditedDate = lastEditedRaw ? new Date(lastEditedRaw) : null;
+
+        if (lastEditedDate) {
+          document.getElementById('lastEditedDisplay').textContent =
+            lastEditedDate.toLocaleString(); // You can customize this format if needed
+        } else {
+          document.getElementById('lastEditedDisplay').textContent = 'Not Available';
+        }
+
+      }
       function getStepParamChunk(stepParam, position) {
         if (!stepParam || position < 1 || position > 8) return null;
 
@@ -916,11 +731,24 @@
         });
 
       }
+      function showPopup() {
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+      }
+      function hidePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+      }
+
     </script>
 
     <div id="sample">
-      <div id="myDiagramDiv" style="background-color: white; border: solid 1px black; width: 100%; height: 550px"></div>
-      <p><button id="zoomToFit">Zoom to Fit</button> <button id="centerRoot">Center on root</button></p>
+      <div id="myDiagramDiv" style="background-color: white; border: solid 1px black; width: 100%; height: 90vh"></div>
+      <p><button id="zoomToFit">Zoom to Fit</button>
+        <button id="centerRoot">Center on root</button>
+        <button onclick="window.location.href = 'registry-to-json.html'">Go to Registry Page</button>
+        Last Update: <span id="lastEditedDisplay">Not Available</span>
+      </p>
       <p id="hidden">this forces the font to load in Chromium browsers</p>
     </div>
 

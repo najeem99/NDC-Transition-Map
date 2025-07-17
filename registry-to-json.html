@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registry to JSON Converter</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      background: #222;
+      color: #eee;
+    }
+
+    textarea {
+      width: 100%;
+      height: 200px;
+      background: #333;
+      color: #eee;
+      border: none;
+      padding: 10px;
+      font-family: monospace;
+      font-size: 14px;
+    }
+
+    #output {
+      white-space: pre-wrap;
+      margin-top: 20px;
+      background: #111;
+      padding: 10px;
+      border-radius: 6px;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Registry to JSON Converter</h2>
+  <textarea id="input" placeholder="Paste your registry text here..."></textarea>
+  <br />
+  <button onclick="convert()">Convert and save</button>
+  <button onclick="window.location.href = 'index.html'">Go to Visualizer</button>
+  <button onclick="deleteAll()">Delete All</button>
+
+  <h3>Saved JSON:</h3>
+  <div id="output"></div>
+
+  <script>
+    function convert() {
+      const input = document.getElementById('input').value;
+      const lines = input.split(/\r?\n/);
+
+      const results = [];
+      let currentEntry = null;
+      let currentType = null;
+
+      lines.forEach(line => {
+        line = line.trim();
+        if (!line) return; // skip empty
+
+        // Detect new block start [HKEY_LOCAL_MACHINE\...]
+        const blockMatch = line.match(/^\[HKEY_LOCAL_MACHINE\\.*?\\(STATE|SCREEN)\\([^\\\]]+)\]$/i);
+        if (blockMatch) {
+          // Push previous block if exists
+          if (currentEntry) results.push(currentEntry);
+
+          currentType = blockMatch[1].toLowerCase(); // state or screen
+          const screenId = blockMatch[2];
+
+          // Start new block object
+          currentEntry = {
+            type: currentType,
+            screenId: screenId
+          };
+          return;
+        }
+
+        // Parse key=value pairs inside block
+        const kvMatch = line.match(/^"([^"]+)"="([^"]*)"$/);
+        if (kvMatch && currentEntry) {
+          const key = kvMatch[1];
+          const val = kvMatch[2];
+          currentEntry[key] = val;
+        }
+      });
+
+      // Push last block
+      if (currentEntry) results.push(currentEntry);
+
+      // Output formatted JSON
+      document.getElementById('output').textContent = JSON.stringify(results, null, 2);
+      localStorage.setItem('states', JSON.stringify(results, null, 2));
+      localStorage.setItem('lastEdited', new Date().toISOString());
+
+    }
+
+    function deleteAll() {
+      localStorage.removeItem('states');
+      localStorage.removeItem('lastEdited');
+    }
+
+  </script>
+
+</body>
+
+</html>
