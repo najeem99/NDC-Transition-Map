@@ -250,11 +250,13 @@ const createNodeTemplate = () =>
     ).bind("visible", "type", t => t === "state"); // 👈 Only visible for 'state'
 
 
-
+// Link Template
 const createLinkTemplate = () => {
     return new go.Link({
         selectionAdorned: false,
-        routing: go.Routing.Orthogonal,
+        // routing: go.Routing.Orthogonal,
+        routing: go.Link.ADORNMENT_STROKE_WIDTH,
+        curve: go.Link.Bezier, // Try Bezier or JumpOver for parallel links
         layerName: 'Background',
         mouseEnter: onMouseEnterPart,
         mouseLeave: onMouseLeavePart
@@ -264,7 +266,14 @@ const createLinkTemplate = () => {
                 strokeWidth: 2
             }).bind("stroke", "color")
         )
+
         .bind("stroke", "color", (c) => c || "#999")
+        .add(
+            new go.Shape({
+                toArrow: "Standard",
+                stroke: null // No outline on arrow
+            }).bind("fill", "color") // Arrow color matches link
+        )
         .add(
             new go.TextBlock({
                 font: '8pt monospace',
