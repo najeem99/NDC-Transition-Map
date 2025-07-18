@@ -198,7 +198,8 @@ const stepFuncBlock = () => new go.TextBlock({
 
 const stepParamBlock = () =>
     new go.TextBlock({
-        margin: 2,
+        margin: new go.Margin(5, 2, 2, 2), // top, right, bottom, left
+        marginTop: 10,
         font: '9pt monospace',
         stroke: '#999'
     })
@@ -241,19 +242,9 @@ const createNodeTemplate = () =>
 
                 stepFuncBlock(),
 
+                screenBlock().bind('visible', 'STEP_FUNC', t => !skipScreens_STEP_FUNC.includes(t)),
                 stepParamBlock(),
-                linkCountBatch(),
-
-                // Conditionally show CONTENTS + screenId for screen nodes
-                new go.TextBlock({
-                    margin: 2,
-                    font: '9pt monospace',
-                    stroke: '#444'
-                }).bind('text', '', function (data) {
-                    return `CONTENTS: ${data.CONTENTS || ''} `;
-                }).bind('visible', 'type', t => t === 'screen'),
-
-                screenBlock().bind('visible', 'STEP_FUNC', t => !skipScreens_STEP_FUNC.includes(t))
+                // linkCountBatch(),
 
             )
     ).bind("visible", "type", t => t === "state"); // 👈 Only visible for 'state'
