@@ -459,6 +459,35 @@ const linkRules = [
         color: '#91eb00',
         label: 'FDK D'
     },
+    {
+        matchSourceFunc: 'DC_INFORMATION_ENTRY',
+        matchTargetFunc: null,
+        matchSourceParamChunk: 4,
+        color: '#00f2ff',
+        label: 'FDK A'
+    },
+    {
+        matchSourceFunc: 'DC_INFORMATION_ENTRY',
+        matchTargetFunc: null,
+        matchSourceParamChunk: 5,
+        color: '#00f2ff',
+        label: 'FDK B'
+    },
+    {
+        matchSourceFunc: 'DC_INFORMATION_ENTRY',
+        matchTargetFunc: null,
+        matchSourceParamChunk: 6,
+        color: '#00f2ff',
+        label: 'FDK C'
+    },
+    {
+        matchSourceFunc: 'DC_INFORMATION_ENTRY',
+        matchTargetFunc: null,
+        matchSourceParamChunk: 7,
+        color: '#00f2ff',
+        label: 'FDK D'
+    },
+
 ];
 const skipScreens_STEP_FUNC = ['NDC_FDK_SWITCH', 'NDC_EXT'];
 
