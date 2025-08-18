@@ -2,6 +2,14 @@
 
 A web-based visualizer for NCR NDC (NCR Direct Connect) protocol, mapping transitions between ATM states and screens. Built with GoJS for interactive state linking and visualization. Helps developers, testers, and QA engineers explore and validate NDC flows.
 
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=js,html,css,tailwind" alt="Tech Stack" />
+  </a>
+  <br/>
+  <img src="https://img.shields.io/badge/GoJS-Diagramming-1F6FEB?logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMSIgc3Ryb2tlPSIjZmZmIiBmaWxsPSIjMDA3YWZmIi8+PHBhdGggZD0iTTkgN2g2djJoLTR2NGg0djJoLTZWN3oiIGZpbGw9IndoaXRlIi8+PC9zdmc+" alt="GoJS" height="28" />
+</p>
+
 **Live:** [https://najeem99.github.io/NDC-Transition-Map](https://najeem99.github.io/NDC-Transition-Map)
 
 ## Features
